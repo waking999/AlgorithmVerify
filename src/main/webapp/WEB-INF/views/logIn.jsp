@@ -12,7 +12,7 @@
 
 <body>
 	<h2>Log In</h2>
-	<form:form modelAttribute="user">
+	<form:form modelAttribute="user" action="logInSubmit">
 		<fieldset>
 			<table>
 				<tr>

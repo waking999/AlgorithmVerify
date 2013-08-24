@@ -1,0 +1,20 @@
+<project default="main">
+	<target name="main" depends="echo">
+	    
+	</target>
+    <target name="echo">
+        <echo>
+			This will do the following things:
+			1) compile the algorithm;
+			2) generate report of compile result;
+			3) if compile success, run the algorithm
+			
+		</echo>
+    </target>
+
+    
+	
+
+
+
+</project>
