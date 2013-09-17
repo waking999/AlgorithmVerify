@@ -33,6 +33,15 @@ public class LogInController {
         return "logIn"; 
 	} 
 	
+	@RequestMapping(value = "signUp", method = RequestMethod.GET)
+	public String setupFormForSignUp(ModelMap model) { 
+        User user = new User();
+        model.addAttribute("user", user); 
+        return "signUp"; 
+	} 
+	
+
+	
 	@RequestMapping(value = "logInSubmit", method = RequestMethod.POST)
 	public ModelAndView onSubmit(@ModelAttribute("user") User user,
 			BindingResult result, SessionStatus status) {

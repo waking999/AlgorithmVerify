@@ -31,6 +31,7 @@ $(document).ready(function() {
 		<tr>
 			<th></th>
 			<th>Name</th>
+			<th>Upload Data</th>
 			<th>filePath</th>
 			<th>Log</th>
 			<th></th>
@@ -46,13 +47,19 @@ $(document).ready(function() {
 				<td><input type="checkbox" />
 				</td>
 				
-				<td>${ai.name}</td>
+				<td><a href="#">${ai.name}</a></td>
+				<td>${ai.uploadDate}</td>
 				<td><a href="#">${ai.filePath}</a></td>
 				<td><a href="#">${ai.log}</a></td>
-				<td><a href="runAlgorithm">Run</a></td>
+				<td><a href="runAlgorithm?algorithmName=${ai.name}">Run</a></td>
 			</tr>
 		</c:forEach>
 
 	</table>
+	<br/>
+	<a href='<c:url value="compareAlg"/>'>Compare Algorithms</a>
+	<br/>
+	
+	<button>Upload</button><button>Delete</button>
 </body>
 </html>

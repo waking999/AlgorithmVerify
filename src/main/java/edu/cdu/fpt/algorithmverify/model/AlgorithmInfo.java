@@ -5,6 +5,14 @@ public class AlgorithmInfo {
 	private String name;
 	private String filePath;
 	private String log;
+	private String uploadDate;
+	
+	public String getUploadDate() {
+		return uploadDate;
+	}
+	public void setUploadDate(String uploadDate) {
+		this.uploadDate = uploadDate;
+	}
 	public int getId() {
 		return id;
 	}

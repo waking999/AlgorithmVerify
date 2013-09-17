@@ -9,7 +9,23 @@
 </head>
 <body>
 	<h2>Algorithm Verify</h2>
+	<p>
+	This website is to provide a place for you to submit your algorithms.
+	<br>
+	Before submission,here are some rules that is necessary to follows.
+	<br>
+	1.
+	<br>
+	2.
 	<br />
-	<a href='<c:url value="logIn"/>'>log In</a>
+	3.
+	</p>
+	<br />
+	<a href='<c:url value="logIn"/>'>Log In</a>
+	
+	<br />
+	<a href='<c:url value="signUp"/>'>Sign Up</a>
+	
+		
 </body>
 </html>

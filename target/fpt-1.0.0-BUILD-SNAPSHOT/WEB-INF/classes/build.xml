@@ -1,0 +1,58 @@
+<project default="main">
+	<!-- this is only useful for calling command line model <property name="algorithm.class.name" 
+		value="${algorithm_class_names}" /> -->
+	<property name="src.dir" value="." />
+
+
+	<property name="classes.dir" value="../bin" />
+
+	<property name="lib.dir" value="../lib" />
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+	</path>
+
+	<target name="main" depends="compile,run">
+
+	</target>
+	<target name="echo">
+		<echo>
+			This is a longer message stretching over
+			three lines; the first
+			line is a blank
+		</echo>
+	</target>
+
+	<target name="compile" description="compile the source ">
+		<echo message="compile ${algorithm.class.name}"></echo>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" fork="yes"
+			classpathref="classpath" includes="edu/cdu/fpt/alg/${algorithm.class.name}.java" />
+	</target>
+
+
+	<taskdef name="algTask" classname="edu.cdu.fpt.AlgorithmTask">
+		<classpath>
+			<pathelement location="${class.dir}" />
+		</classpath>
+	</taskdef>
+	<!-- for algorithms withou preAlgorithm -->
+	<!--  
+	<target name="run">
+		<algTask algClass="edu.cdu.fpt.alg.${algorithm.class.name}"
+		    judgeClass="edu.cdu.fpt.judge.DefaultJudge"
+			testFilePath="resource/testcase400.csv" k="11" 
+			preAlgClass=""/>
+	</target>
+	-->
+	<!-- for algorithms with preAlgorithm -->
+	<target name="run">
+		<algTask algClass="edu.cdu.fpt.alg.${algorithm.class.name}"
+		    judgeClass="edu.cdu.fpt.judge.DefaultJudge"
+			testFilePath="resource/testcase400.csv" k="11" 
+			preAlgClass="edu.cdu.fpt.alg.AlgorithmGreedy"/>
+	</target>
+
+
+
+
+</project>
