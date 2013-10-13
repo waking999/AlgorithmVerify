@@ -77,11 +77,15 @@ public class AlgorithmTask extends Task {
 			alg.generateDominatingSet();
 
 			Set<List<String>> dsSet = alg.getDominatingSetSet();
+			
 			// int dsSetLen = dsSet.size();
 
 			Class judgeClazz = Class.forName(judgeClass);
 			IJudge judge = (IJudge) judgeClazz.newInstance();
-
+			
+//			for(List<String> ds: dsSet){
+//				judge.isDS(g, ds, complementaryDS);
+//			}
 			// Assert.assertEquals(1, dsSetLen);
 			//
 			// Object[] dsArr = (dsSet.toArray());
